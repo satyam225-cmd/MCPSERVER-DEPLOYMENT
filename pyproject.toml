@@ -11,13 +11,12 @@ dependencies = [
 [project.scripts]
 mcp-server = "mcpserver.__main__:main"
 
+# Without wheel → creates source distribution (.tar.gz)
+# With wheel → creates binary distribution (.whl) + source
 [build-system]
-requires = ["setuptools"]
+requires = ["setuptools>=61", "wheel"]
 build-backend = "setuptools.build_meta"
 
-[tool.setuptools]
-package_dir = {"" = "src"}
-
-[tool.setuptools.package.find]
-where =["src"]
+[tool.setuptools.packages.find]
+where = ["src"]
 
