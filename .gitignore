@@ -1,0 +1,4 @@
+.env
+.vscode/
+src/mcpserver_deployment.egg-info/
+src/mcpserver/__pycache__/
