@@ -1,8 +1,19 @@
+from loguru import logger
+from mcpserver.logging_config import configure_logging
 from mcpserver.deployments import mcp
 from mcpserver.add_numbers import addmcp
 
+
 def main():
-    mcp.run()
+    # Configure logging
+    configure_logging()
+    logger.info("Starting MCP server")
+    try:
+        mcp.run()
+    except Exception as e:
+        logger.error(f"Server error: {e}", exc_info=True)
+        raise
+
 
 if __name__ == "__main__":
     main()
