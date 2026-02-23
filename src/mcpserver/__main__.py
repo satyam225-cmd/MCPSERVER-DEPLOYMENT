@@ -1,7 +1,8 @@
 from loguru import logger
-from mcpserver.logging_config import configure_logging
-from mcpserver.deployments import mcp
+
 from mcpserver.add_numbers import addmcp
+from mcpserver.deployments import mcp
+from mcpserver.logging_config import configure_logging
 
 
 def main():
@@ -17,4 +18,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-    

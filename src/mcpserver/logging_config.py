@@ -1,6 +1,8 @@
 """Logging configuration for MCP server."""
+
 import os
 import sys
+
 from loguru import logger
 
 
@@ -15,7 +17,9 @@ def configure_logging():
     logger.remove()
 
     # Create logs directory if it doesn't exist
-    os.makedirs(os.path.dirname(log_file) if os.path.dirname(log_file) else ".", exist_ok=True)
+    os.makedirs(
+        os.path.dirname(log_file) if os.path.dirname(log_file) else ".", exist_ok=True
+    )
 
     # Add file handler
     logger.add(
